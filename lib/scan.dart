@@ -28,8 +28,10 @@ class _ScanState extends State<Scan> {
               textAlign: TextAlign.center,
             ),
             Text(qrResult,
+              style: const TextStyle(fontSize: 18.0, fontWeight: FontWeight.w400),
               textAlign: TextAlign.center,
-            )
+            ),
+
           ],
         ),
       ),
