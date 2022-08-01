@@ -1,6 +1,5 @@
 import 'package:barcode_scan2/platform_wrapper.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 
 class Scan extends StatefulWidget {
   const Scan({Key? key}) : super(key: key);
@@ -22,7 +21,7 @@ class _ScanState extends State<Scan> {
       ),
       body: Container(
         color: const Color(0xFFF2E9BE),
-        padding: const EdgeInsets.all(40),
+        padding: const EdgeInsets.all(50),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
