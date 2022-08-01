@@ -31,7 +31,18 @@ class _ScanState extends State<Scan> {
               style: const TextStyle(fontSize: 18.0, fontWeight: FontWeight.w400),
               textAlign: TextAlign.center,
             ),
-
+              ElevatedButton(onPressed: () {
+              },
+                style: ElevatedButton.styleFrom(
+                    primary: const Color(0xFFE6A0B8),
+                    onPrimary: const Color(0xFF550A0F),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0)
+                    )
+                ), child: const Text(
+                "Scan QR Code",
+              ),
+              )
           ],
         ),
       ),
