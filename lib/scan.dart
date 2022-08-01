@@ -1,3 +1,4 @@
+import 'package:barcode_scan2/platform_wrapper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 
@@ -35,8 +36,8 @@ class _ScanState extends State<Scan> {
               textAlign: TextAlign.center,
             ),
               ElevatedButton(onPressed: () async {
-                String scanning = await FlutterBarcodeScanner.scanBarcode('Colors.red', 'Cancel', true, ScanMode.BARCODE);
 
+                String scanning = (await BarcodeScanner.scan()) as String;
                 setState((){
                   qrResult = scanning;
                 });
