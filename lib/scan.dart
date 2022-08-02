@@ -36,6 +36,7 @@ class _ScanState extends State<Scan> {
             //   style: const TextStyle(fontSize: 18.0, fontWeight: FontWeight.w400),
             //   textAlign: TextAlign.center,
             // ),
+            const SizedBox(height: 40.0,),
               Center(
                 child: Text.rich(
                   TextSpan(
@@ -43,11 +44,12 @@ class _ScanState extends State<Scan> {
                     style: const TextStyle(color: Colors.blue),
                     recognizer: TapGestureRecognizer()
                       ..onTap = () {
-                          _launch;
+                        _launchURL;
                       }
                   )
                 ),
               ),
+              const SizedBox(height: 40.0,),
               ElevatedButton(onPressed: () async {
                 final scanning = (await BarcodeScanner.scan());
                 setState((){
@@ -69,14 +71,7 @@ class _ScanState extends State<Scan> {
       ),
     );
   }
-
-  _launch() async{
-    dynamic url = qrResult;
-    if(await canLaunchUrl(url)){
-      await launchUrl(url);
-    }else{
-      throw 'ERROR 404 on $url';
-    }
-  }
-
+  Uri _url = 'https://pub.dev/packages/http' as Uri;
+  void _launchURL() async =>
+      await canLaunchUrl(_url) ? await launchUrl(_url) : throw 'Could not launch $_url';
 }
